@@ -22,7 +22,7 @@ app.get("/", (request, response) => {
 });
 app.post("/", (req, res) => {
 //Paste ID
-    function make_paste_id(length) {
+  function make_paste_id(length) {
     var result = "";
     var characters =
       "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -32,15 +32,16 @@ app.post("/", (req, res) => {
     }
     return result;
   }
-
+var make = make_paste_id(10);
   var negoB = req.body;
   var Data = {
     author: negoB["author"],
     paste: negoB["paste"],
-    paste_language: negoB["pastelang"]
+    paste_language: negoB["pastelang"],
+    paste_id: make
   };
-  db.push(`paste`);
-  
+  db.push(`paste_${make}`,Data);
+  res.redirect(`/paste/${make}/`);
 
 });
 
