@@ -13,6 +13,14 @@ const dreams = [
   "Climb a really tall mountain",
   "Wash the dishes"
 ];
+var bodyParser = require("body-parser");
+
+
+app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
 
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
@@ -40,11 +48,11 @@ var make = make_paste_id(10);
     paste_language: negoB["pastelang"],
     paste_id: make
   };
-  db.push(`paste_${make}`,Data);
+  db.push(`paste.${make}`,Data);
   res.redirect(`/paste/${make}/`);
 
 });
-
+console.log(db.fetch(`paste`));
 
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
