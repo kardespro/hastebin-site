@@ -10,7 +10,9 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "ejs": "^3.1.6",
+    "wio.db": "^4.0.21"
   },
   "engines": {
     "node": "12.x"
