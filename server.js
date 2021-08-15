@@ -25,7 +25,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 app.get("/", (request, response) => {
-  response.render("home");
+  var negoSize = db.size
+  var dbVersion = db.info.version
+  response.render("home",{negoSize,dbVersion});
   
 });
 app.post("/", (req, res) => {
@@ -53,7 +55,7 @@ var make = make_paste_id(10);
 
 });
 console.log(db.fetch(`paste`));
-
+console.log(db.info);
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });

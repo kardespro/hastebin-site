@@ -6,17 +6,43 @@
   <br>
 <textarea name="paste" type="text" placeholder="Paste " class="form-control" required ></textarea>
   <br>
-<select name="pastelang" class="form-control">
+<select name="pastelang" class="nego" id="nego">
   <option value="Javascript">Javascript</option>
+  <option value="Python">Python</option>
+  <option value="HTML">Html</option>
+ 
+ 
+  
+  
   </select>
+  <br>
   <br>
 <button type="submit" class="btn btn-success">Share</button>
   
 </form>
   </div>
 <br>
+
+<br>
+
+<br>
+<div class="jumbotron form-control">
+Paste's Database Size:
+  <br>
+  <%= negoSize %>
+  <br>
+Database Version : 
+  <br>
+  <%= dbVersion %>
+  <br>
+</div>
 <!-- MDB -->
 <script
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"
 ></script>
+<script>
+new SlimSelect({
+  select: '#nego'
+})
+</script>
