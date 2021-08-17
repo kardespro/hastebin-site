@@ -1,4 +1,6 @@
 <%- include('./includes/head') %>
+
+
 <style>
 .cm-s-3024-night.CodeMirror { background: #090300; color: #d6d5d4; }
 .cm-s-3024-night div.CodeMirror-selected { background: #3a3432; }
@@ -52,23 +54,39 @@
     
     </center>
 </div>
-    					<textarea readonly style="width: 100%;" id="editor2" name="editor2" disabled><%=pasteData.paste%></textarea>
+    					<textarea readonly style="width: 100%;" class="copy_text form-control" id="editor2" name="editor2" value="<%=pasteData.paste%>" disabled><%=pasteData.paste%></textarea>
 					
     <script>
 					var editor2 = CodeMirror.fromTextArea(document.getElementById('editor2'), {
 							mode: "javascript",
 							theme: "3024-day",
 							lineNumbers: true,
-							readOnly: 'true'
+							readOnly: 'false'
 					});
 					editor2.save()
 					</script>
     <script>
     
     </script>
-    <div class="jumbotron">
+    <br>
+    <div class="jumbotron form-control">
 <button onclick="execCopy()" id="cpbutton"><i class="fad fa-copy"></i></button>
       </div>
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/codemirror.css' rel='stylesheet'>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/codemirror.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/mode/javascript/javascript.js'></script>
+    <script>
+    function execCopy(){
+        var dummy = $('.copy_text').val();
+        $('.copy_text').select();
+        document.execCommand('copy');
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Link Copied',
+            text: dummy,
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    
+    
