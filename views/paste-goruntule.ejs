@@ -1,6 +1,55 @@
 <%- include('./includes/head') %>
 <div class="form-control info-paste">
   <center>
+    <br>
 <h1><i class="fad fa-file-signature"></i>  <%= pasteData.pasteName %> </h1>
+    
+    
+    <h1><i class="fad fa-user-crown"></i>  <%= pasteData.author %> <h1>
+      
+      <% if(pasteData.paste_language){ %>
+      <% if(pasteData.paste_language === "Javascript"){ %>
+     <h1> <i class="fab fa-js"></i></h1>
+      <%}%>
+      <%}%>
+    
     </center>
 </div>
+    					<textarea readonly style="width: 100%;" id="editor2" name="editor2"><%=pasteData.paste%></textarea>
+					
+    <script>
+					var editor2 = CodeMirror.fromTextArea(document.getElementById('editor2'), {
+							mode: "javascript",
+							theme: "3024-night",
+							lineNumbers: true,
+							readOnly: 'true'
+					});
+					editor2.save()
+					</script>
+    <script>
+    function myFunction() {
+
+  /* Get the text field */
+
+  var copyText = document.getElementById("editor2");
+
+  /* Select the text field */
+
+  copyText.select();
+
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+   /* Copy the text inside the text field */
+
+  navigator.clipboard.writeText(copyText.value);
+
+  /* Alert the copied text */
+
+  alert("Sucessfully! Copied ");
+
+}
+    
+    </script>
+    <div class="jumbotron">
+<button onclick="myFunction()"><i class="fad fa-copy"></i></button>
+      </div>
