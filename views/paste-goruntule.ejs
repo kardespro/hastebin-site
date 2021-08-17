@@ -1,4 +1,41 @@
 <%- include('./includes/head') %>
+<style>
+.cm-s-3024-night.CodeMirror { background: #090300; color: #d6d5d4; }
+.cm-s-3024-night div.CodeMirror-selected { background: #3a3432; }
+.cm-s-3024-night .CodeMirror-line::selection, .cm-s-3024-night .CodeMirror-line > span::selection, .cm-s-3024-night .CodeMirror-line > span > span::selection { background: rgba(58, 52, 50, .99); }
+.cm-s-3024-night .CodeMirror-line::-moz-selection, .cm-s-3024-night .CodeMirror-line > span::-moz-selection, .cm-s-3024-night .CodeMirror-line > span > span::-moz-selection { background: rgba(58, 52, 50, .99); }
+.cm-s-3024-night .CodeMirror-gutters { background: #090300; border-right: 0px; }
+.cm-s-3024-night .CodeMirror-guttermarker { color: #db2d20; }
+.cm-s-3024-night .CodeMirror-guttermarker-subtle { color: #5c5855; }
+.cm-s-3024-night .CodeMirror-linenumber { color: #5c5855; }
+
+.cm-s-3024-night .CodeMirror-cursor { border-left: 1px solid #807d7c; }
+
+.cm-s-3024-night span.cm-comment { color: #cdab53; }
+.cm-s-3024-night span.cm-atom { color: #a16a94; }
+.cm-s-3024-night span.cm-number { color: #a16a94; }
+
+.cm-s-3024-night span.cm-property, .cm-s-3024-night span.cm-attribute { color: #01a252; }
+.cm-s-3024-night span.cm-keyword { color: #db2d20; }
+.cm-s-3024-night span.cm-string { color: #fded02; }
+
+.cm-s-3024-night span.cm-variable { color: #01a252; }
+.cm-s-3024-night span.cm-variable-2 { color: #01a0e4; }
+.cm-s-3024-night span.cm-def { color: #e8bbd0; }
+.cm-s-3024-night span.cm-bracket { color: #d6d5d4; }
+.cm-s-3024-night span.cm-tag { color: #db2d20; }
+.cm-s-3024-night span.cm-link { color: #a16a94; }
+.cm-s-3024-night span.cm-error { background: #db2d20; color: #807d7c; }
+
+.cm-s-3024-night .CodeMirror-activeline-background { background: #2F2F2F; }
+.cm-s-3024-night .CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }
+</style>
+
+<style>
+.fab > .fa-javascript{
+  background-color:yellow;
+  }
+</style>
 <div class="form-control info-paste">
   <center>
     <br>
@@ -15,41 +52,23 @@
     
     </center>
 </div>
-    					<textarea readonly style="width: 100%;" id="editor2" name="editor2"><%=pasteData.paste%></textarea>
+    					<textarea readonly style="width: 100%;" id="editor2" name="editor2" disabled><%=pasteData.paste%></textarea>
 					
     <script>
 					var editor2 = CodeMirror.fromTextArea(document.getElementById('editor2'), {
 							mode: "javascript",
-							theme: "3024-night",
+							theme: "3024-day",
 							lineNumbers: true,
 							readOnly: 'true'
 					});
 					editor2.save()
 					</script>
     <script>
-    function myFunction() {
-
-  /* Get the text field */
-
-  var copyText = document.getElementById("editor2");
-
-  /* Select the text field */
-
-  copyText.select();
-
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-   /* Copy the text inside the text field */
-
-  navigator.clipboard.writeText(copyText.value);
-
-  /* Alert the copied text */
-
-  alert("Sucessfully! Copied ");
-
-}
     
     </script>
     <div class="jumbotron">
-<button onclick="myFunction()"><i class="fad fa-copy"></i></button>
+<button onclick="execCopy()" id="cpbutton"><i class="fad fa-copy"></i></button>
       </div>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/codemirror.css' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/codemirror.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/mode/javascript/javascript.js'></script>
