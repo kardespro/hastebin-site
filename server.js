@@ -46,6 +46,7 @@ var make = make_paste_id(10);
   var negoB = req.body;
   var Data = {
     author: negoB["author"],
+    pasteName: negoB["pastename"],
     paste: negoB["paste"],
     paste_language: negoB["pastelang"],
     paste_id: make
@@ -54,8 +55,17 @@ var make = make_paste_id(10);
   res.redirect(`/paste/${make}/`);
 
 });
+app.get("/paste/:pasteID", (req, res) => {
+ var pasteCheck = db.fetch(`paste.${req.params.pasteID}`);
+  if(!pasteCheck) return res.json("unkown");
+  var pasteData = db.fetch(`paste.${req.params.pasteID}`);
+  var pasteName = db.fetch(`paste.${req.params.pasteID}`).name
+
+  
+  res.render("paste-goruntule",{pasteData});
+  });
 console.log(db.fetch(`paste`));
-console.log(db.info);
+console.log(db.fetch(`paste.5RqICxaRUj`).name);
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
