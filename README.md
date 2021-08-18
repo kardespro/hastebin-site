@@ -12,3 +12,4 @@ Altyapida Bulunanlar
 + Yazi Goruntule
 + Raw
 + JSON API
++ Yaziya Kac Kisi Bakdi

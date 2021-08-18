@@ -1,5 +1,5 @@
 <%- include('./includes/head') %>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/mode/javascript/javascript.min.js" integrity="sha512-FmeuAXHyL8RebErBWCk+UDL2rKHP7xNUm5DzMQN0qkylcdMjBFCqgK8B0KCC+VFibD3fiWQb6XIRay2DvoGZVA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <style>
 .cm-s-3024-night.CodeMirror { background: #090300; color: #d6d5d4; }
@@ -105,23 +105,28 @@ header {
   <center>
     <br>
 <h1><i class="fad fa-file-signature"></i>  <%= pasteData.pasteName %> </h1>
-    
+    <hr>
     
     <h1><i class="fad fa-user-crown"></i>  <%= pasteData.author %> <h1>
-      
+      <hr>
       <% if(pasteData.paste_language){ %>
       <% if(pasteData.paste_language === "Javascript"){ %>
      <h1> <i class="fab fa-js"></i></h1>
       <%}%>
+      <% if(pasteData.paste_language === "HTML"){ %>
+     <h1> <i class="fab fa-html5"></i></h1>
       <%}%>
-    
+
+      <%}%>
+    <hr>
+     <i class="fad fa-eye"></i>   Paste Viewers Count: <%= viewCount %>
     </center>
 </div>
     					<textarea readonly style="width: 100%;" class="copy_text form-control" id="editor2" name="editor2" value="<%=pasteData.paste%>" disabled><%=pasteData.paste%></textarea>
 					
     <script>
 					var editor2 = CodeMirror.fromTextArea(document.getElementById('editor2'), {
-							mode: "javascript",
+							mode: "<%= pasteData.paste_language%>",
 							theme: "3024-day",
 							lineNumbers: true,
 							readOnly: 'false'
@@ -154,7 +159,7 @@ header {
         <button class="btn btn-secondary"><i class="fab fa-instagram"></i></button>
         <button class="btn btn-secondary"><i class="fab fa-discord"></i></button>
         <hr>
-        <p class="btn btn">https://hastebin-nego.glitch.me/paste/<%=pasteData.paste_id%></p>
+        <p class="btn btn" style="font-size:small;">https://hastebin-nego.glitch.me/paste/<%=pasteData.paste_id%></p>
       
       
         

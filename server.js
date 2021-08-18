@@ -60,9 +60,11 @@ app.get("/paste/:pasteID", (req, res) => {
   if(!pasteCheck) return res.json("unkown");
   var pasteData = db.fetch(`paste.${req.params.pasteID}`);
   var pasteName = db.fetch(`paste.${req.params.pasteID}`).pasteName
+  db.add(`pasteViewCount.${req.params.pasteID}`,+1);
+  var viewCount = db.fetch(`pasteViewCount.${req.params.pasteID}`);
 
   
-  res.render("paste-goruntule",{pasteData});
+  res.render("paste-goruntule",{pasteData,viewCount});
   });
 console.log(db.fetch(`paste`));
 var test  = db.fetch(`paste.FJEAnrKbiA`)
