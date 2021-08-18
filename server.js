@@ -8,11 +8,10 @@ const {
 const db = new JsonDatabase({
   databasePath:"./Database/paste.json"
 });
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
+//Paste Siler
+setTimeout(function(){
+  
+}, 3000);
 var bodyParser = require("body-parser");
 
 
