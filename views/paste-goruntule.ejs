@@ -71,8 +71,65 @@
     <br>
     <div class="jumbotron form-control">
 <button onclick="execCopy()" id="cpbutton" class="btn btn-success"><i class="fad fa-copy"></i></button>
+<button onclick="shareNego()" id="sharebutton" class="btn btn-success share-button"><i class="fad fa-share"></i></button>
+
       </div>
+    
+<div class="share-dialog">
+  <header>
+    <h3 class="dialog-title">Share this pen</h3>
+    <button class="close-button"><svg><use href="#close"></use></svg></button>
+  </header>
+  <div class="targets">
+    <a class="button">
+      <svg>
+        <use href="#facebook"></use>
+      </svg>
+      <span>Facebook</span>
+    </a>
+    
+    <a class="button">
+      <svg>
+        <use href="#twitter"></use>
+      </svg>
+      <span>Twitter</span>
+    </a>
+    
+    <a class="button">
+      <svg>
+        <use href="#linkedin"></use>
+      </svg>
+      <span>LinkedIn</span>
+    </a>
+    
+    <a class="button">
+      <svg>
+        <use href="#email"></use>
+      </svg>
+      <span>Email</span>
+    </a>
+  </div>
+  <div class="link">
+    <div class="pen-url">https://codepen.io/ayoisaiah/pen/YbNazJ</div>
+    <button class="copy-link">Copy Link</button>
+  </div>
+</div>
     <script>
+     
+const shareButton = document.querySelector('.share-button');
+const shareDialog = document.querySelector('.share-dialog');
+const closeButton = document.querySelector('.close-button');
+
+shareButton.addEventListener('click', event => {
+  shareDialog.classList.add('is-open');
+});
+
+closeButton.addEventListener('click', event => {
+  shareDialog.classList.remove('is-open');
+});
+
+
+
     function execCopy(){
         var dummy = $('.copy_text').val();
         $('.copy_text').select();
@@ -81,7 +138,7 @@
             position: 'center',
             icon: 'success',
             title: 'Link Copied',
-            text: dummy,
+            text: "NegoPaste.me",
             showConfirmButton: false,
             timer: 1500
         });
