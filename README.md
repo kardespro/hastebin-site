@@ -13,3 +13,15 @@ Altyapida Bulunanlar
 + Raw
 + JSON API
 + Yaziya Kac Kisi Bakdi
+
+Altyapida Kullanilan DB 
+ + Wio.db
+ 
+Sayfalar
+  + / = AnaSayfa
+  + /paste/:pasteID = Yazi goruntuleme
+  + /api/:pasteID/tojson = Yazi JSON Apisi
+  + /api/database = VeriTabani Bilgilerini Gosterir
+  
+  
+[[Discord Profilim]](https://discord.com/users/682607343707488388)

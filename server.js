@@ -9,6 +9,7 @@ const db = new JsonDatabase({
   databasePath:"./Database/paste.json"
 });
 //Paste Siler
+//cooming soon xd
 setTimeout(function(){
   
 }, 3000);

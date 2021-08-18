@@ -116,8 +116,11 @@ header {
       <% if(pasteData.paste_language === "HTML"){ %>
      <h1> <i class="fab fa-html5"></i></h1>
       <%}%>
-
+     
+    
       <%}%>
+        <h1> <i class="fab fa-<%= pasteData.paste_language %>"></i></h1>
+
        <% if(viewCount > 1){ %>
      
     
