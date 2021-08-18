@@ -37,6 +37,69 @@
 .fab > .fa-javascript{
   background-color:yellow;
   }
+button:hover, .button:hover {
+  border-color: #cdd;
+}
+
+  .share-dialog {
+  display: none;
+  width: 95%;
+  max-width: 500px;
+  box-shadow: 0 8px 16px rgba(0,0,0,.15);
+  z-index: -1;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.share-dialog.is-open {
+  display: block;
+  z-index: 2;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.targets {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.close-button svg {
+  margin-right: 0;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #eee;
+}
+
+.pen-url {
+  margin-right: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+
 </style>
 <div class="form-control info-paste">
   <center>
@@ -71,47 +134,33 @@
     <br>
     <div class="jumbotron form-control">
 <button onclick="execCopy()" id="cpbutton" class="btn btn-success"><i class="fad fa-copy"></i></button>
-<button onclick="shareNego()" id="sharebutton" class="btn btn-success share-button"><i class="fad fa-share"></i></button>
+<button onclick="shareNego()" id="sharebutton" class="btn btn-success share-button" data-toggle="modal" data-target="#exampleModal"><i class="fad fa-share"></i></button>
 
       </div>
-    
-<div class="share-dialog">
-  <header>
-    <h3 class="dialog-title">Share this pen</h3>
-    <button class="close-button"><svg><use href="#close"></use></svg></button>
-  </header>
-  <div class="targets">
-    <a class="button">
-      <svg>
-        <use href="#facebook"></use>
-      </svg>
-      <span>Facebook</span>
-    </a>
-    
-    <a class="button">
-      <svg>
-        <use href="#twitter"></use>
-      </svg>
-      <span>Twitter</span>
-    </a>
-    
-    <a class="button">
-      <svg>
-        <use href="#linkedin"></use>
-      </svg>
-      <span>LinkedIn</span>
-    </a>
-    
-    <a class="button">
-      <svg>
-        <use href="#email"></use>
-      </svg>
-      <span>Email</span>
-    </a>
-  </div>
-  <div class="link">
-    <div class="pen-url">https://codepen.io/ayoisaiah/pen/YbNazJ</div>
-    <button class="copy-link">Copy Link</button>
+  
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button class="btn btn-secondary"><i class="fab fa-facebook-f"></i></button>
+        <button class="btn btn-secondary"><i class="fab fa-whatsapp"></i></button>
+        <button class="btn btn-secondary"><i class="fab fa-facebook-f"></i></button>
+      
+        
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
     <script>
@@ -146,4 +195,7 @@ closeButton.addEventListener('click', event => {
       </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
