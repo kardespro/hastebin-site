@@ -94,6 +94,10 @@ var viewCount = db.fetch(`pasteViewCount.${req.params.pasteID}`);
   res.json(Data);
   
   });
+app.get("/api/database", (req, res) => {
+  res.json({size:db.size});
+  });
+
 
 console.log(db.fetch(`paste`));
 var test  = db.fetch(`paste.FJEAnrKbiA`)
