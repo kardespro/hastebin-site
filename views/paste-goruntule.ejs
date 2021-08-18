@@ -118,8 +118,14 @@ header {
       <%}%>
 
       <%}%>
-    <hr>
-     <i class="fad fa-eye"></i>   Paste Viewers Count: <%= viewCount %>
+       <% if(viewCount > 1){ %>
+     
+    
+    <p> <i class="fad fa-eye"></i>   Paste Viewers Count: <%= viewCount %></p>
+      <% }else{ %>
+      
+      <i class="fad fa-eye-slash"></i>
+      <% }%>
     </center>
 </div>
     					<textarea readonly style="width: 100%;" class="copy_text form-control" id="editor2" name="editor2" value="<%=pasteData.paste%>" disabled><%=pasteData.paste%></textarea>
