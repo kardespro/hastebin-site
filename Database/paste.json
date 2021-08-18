@@ -122,6 +122,20 @@
             "paste": "const api = new API()\r\napi.forEach(x=> {\r\n\r\nx.title\r\n});",
             "paste_language": "Javascript",
             "paste_id": "prxE9AexGN"
+        },
+        "s7Xk4FKRHT": {
+            "author": "yt",
+            "pasteName": "ytt",
+            "paste": "ytttt",
+            "paste_language": "Javascript",
+            "paste_id": "s7Xk4FKRHT"
+        },
+        "9O61l5Hsue": {
+            "author": "Nicat-Dcw",
+            "pasteName": "ya",
+            "paste": "sari",
+            "paste_language": "Javascript",
+            "paste_id": "9O61l5Hsue"
         }
     }
 }
