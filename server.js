@@ -76,6 +76,26 @@ app.get("/raw/:pasteID", (req, res) => {
   res.write(pasteData.paste);
   
   });
+app.get("/api/:pasteID/tojson", (req, res) => {
+ var pasteCheck = db.fetch(`paste.${req.params.pasteID}`);
+  if(!pasteCheck) return res.json("unkown");
+  var pasteData = db.fetch(`paste.${req.params.pasteID}`);
+  var pasteName = db.fetch(`paste.${req.params.pasteID}`).pasteName
+var viewCount = db.fetch(`pasteViewCount.${req.params.pasteID}`);
+
+
+  
+  var Data = {
+  pasteName:pasteData.pasteName,
+  paste: pasteData.paste,
+  paste_id:pasteData.paste_id,
+  pasteLang: pasteData.paste_language,
+  viewers: viewCount
+}
+  res.json(Data);
+  
+  });
+
 console.log(db.fetch(`paste`));
 var test  = db.fetch(`paste.FJEAnrKbiA`)
 console.log(test.pasteName);
