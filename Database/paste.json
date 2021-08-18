@@ -164,6 +164,27 @@
             "paste": "77",
             "paste_language": "CSS",
             "paste_id": "umq7ylyrys"
+        },
+        "LBfxRmwV2C": {
+            "author": "Nego",
+            "pasteName": "Video",
+            "paste": "const blabla = new Array()\r\nblabla.push(\"data\",\"data\");",
+            "paste_language": "Javascript",
+            "paste_id": "LBfxRmwV2C"
+        },
+        "wZqErO4vMe": {
+            "author": "Nego",
+            "pasteName": "Video",
+            "paste": "const blabla = new Array()\r\nblabla.push(\"data\",\"data\");",
+            "paste_language": "Javascript",
+            "paste_id": "wZqErO4vMe"
+        },
+        "hG2Gep3lsb": {
+            "author": "Test2",
+            "pasteName": "Blablatest",
+            "paste": "const blabla = new Array()\r\nblabla.push(\"data\",\"data\");",
+            "paste_language": "Javascript",
+            "paste_id": "hG2Gep3lsb"
         }
     },
     "pasteViewCount": {
@@ -171,6 +192,9 @@
         "19hv1qr4lh": 1,
         "V6qlY6p6xW": 5,
         "prxE9AexGN": 1,
-        "umq7ylyrys": 5
+        "umq7ylyrys": 5,
+        "LBfxRmwV2C": 2,
+        "wZqErO4vMe": 2,
+        "hG2Gep3lsb": 2
     }
 }
