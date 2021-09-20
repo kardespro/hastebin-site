@@ -99,10 +99,6 @@ app.get("/api/database", (req, res) => {
   res.json({size:db.size});
   });
 
-
-console.log(db.fetch(`paste`));
-var test  = db.fetch(`paste.FJEAnrKbiA`)
-console.log(test.pasteName);
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
